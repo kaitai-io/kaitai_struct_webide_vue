@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "fudgedit": "0.0.1",
+    "localforage": "^1.7.3",
+    "monaco-editor": "^0.17.0",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
@@ -17,10 +20,12 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@stencil/webpack": "0.0.6",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-plugin-typescript": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
+    "monaco-editor-webpack-plugin": "^1.7.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "typescript": "^3.4.3",

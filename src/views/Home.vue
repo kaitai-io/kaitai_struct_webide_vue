@@ -1,18 +1,42 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <!-- <input type="file" @change="setHexCode"/> -->
+    <div class="editor" ref="editor"></div>
+    <!-- <fudge-hex-editor ref="hexedit"></fudge-hex-editor> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import * as monaco from 'monaco-editor';
 
 @Component({
   components: {
-    HelloWorld,
+
+  },
+
+  mounted() {
+    monaco.editor.create((this.$refs.editor as HTMLElement), {
+      language: 'javascript',
+    });
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+
+  public setHexCode(evt: Event) {
+    (this.$refs.hexedit as HTMLFudgeHexEditorElement).acceptFile((evt.target as HTMLInputElement).files[0]);
+  }
+}
 </script>
+
+<style lang="scss" scoped>
+.home {
+  display: grid;
+  grid-template-columns: auto;
+  height: 100%;
+}
+.editor {
+  width: 100%;
+  height: 100%;
+}
+</style>
