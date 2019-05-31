@@ -6,7 +6,7 @@ module.exports = {
     plugins: [
       new stencil.StencilPlugin(),
       new MonacoWebpackPlugin({
-        languages: ['javascript']
+        languages: ['javascript', 'typescript']
       })
     ],
   }

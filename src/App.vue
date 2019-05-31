@@ -14,8 +14,12 @@
 <style lang="scss">
 body, html {
   margin: 0;
-  box-sizing: border-box;
   height: 100%;
+  max-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 #app {
@@ -23,13 +27,12 @@ body, html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  display: grid;
   height: 100%;
+  grid-template-rows: 30px auto;
+  position: relative;
 }
 #nav {
-  padding: 30px;
   a {
     font-weight: bold;
     color: #2c3e50;
